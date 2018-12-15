@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: gateway
+---
+testFramework: spock
+sourceLanguage: groovy

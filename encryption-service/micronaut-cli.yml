@@ -1,0 +1,5 @@
+profile: encrypt.service.bean
+defaultPackage: encrypt.encrypt.service.bean
+---
+testFramework: spock
+sourceLanguage: groovy
