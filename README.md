@@ -2,4 +2,4 @@
 
 [Micronaut](http://micronaut.io/) based reactive microservice and gateway. 
 
-Poor clone of [codemotion-madrid-2018-micronaut](https://github.com/ilopmar/codemotion-madrid-2018-micronaut) repository of [Iv·n LÛpez](https://github.com/ilopmar) but coded in Groovy only.
+Poor clone of [codemotion-madrid-2018-micronaut](https://github.com/ilopmar/codemotion-madrid-2018-micronaut) repository of [Iv√°n L√≥pez](https://github.com/ilopmar) but coded in Groovy only.
