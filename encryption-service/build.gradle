@@ -10,7 +10,6 @@ group "encryption.service"
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
 }
 
 micronaut {

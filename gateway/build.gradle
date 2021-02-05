@@ -10,7 +10,6 @@ group "gateway"
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
