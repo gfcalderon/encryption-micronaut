@@ -1,14 +1,15 @@
 package gateway
 
 import io.micronaut.retry.annotation.Fallback
-import io.reactivex.Single
+import org.reactivestreams.Publisher
+import reactor.core.publisher.Mono
 
 @Fallback
 class GatewayClientFallback implements gateway.EncryptionOperations {
 
     @Override
-    Single encrypt( String text ) {
-        return Single.just( new Message( text: "Fallback: ${text}" ) )
+    Publisher encrypt( String text ) {
+        return Mono.just( new Message( text: "Fallback: ${text}" ) )
     }
 
 }

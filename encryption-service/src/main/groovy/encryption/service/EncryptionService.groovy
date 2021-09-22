@@ -1,9 +1,9 @@
 package encryption.service
 
 import io.micronaut.runtime.server.EmbeddedServer
-import io.reactivex.Single
-
-import javax.inject.Singleton
+import jakarta.inject.Singleton
+import org.reactivestreams.Publisher
+import reactor.core.publisher.Mono
 
 @Singleton
 class EncryptionService {
@@ -14,9 +14,9 @@ class EncryptionService {
         this.server = server
     }
 
-    Single encrypt( String text ) {
+    Publisher encrypt( String text ) {
         String encrypted = text.bytes.encodeBase64().toString()
-        return Single.just( new Message( text: encrypted + " -> " + server.port ) )
+        return Mono.just( new Message(text: encrypted + " -> " + server.port ) )
     }
 
 }

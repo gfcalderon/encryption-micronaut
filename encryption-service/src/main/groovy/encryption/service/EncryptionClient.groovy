@@ -1,13 +1,16 @@
 package encryption.service
 
+import io.micronaut.core.async.annotation.SingleResult
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.client.annotation.Client
-import io.reactivex.Single
+import org.reactivestreams.Publisher
+
 
 @Client( "/" )
 interface EncryptionClient {
 
     @Get( "/encrypt/{text}" )
-    Single encrypt( String text )
+    @SingleResult
+    Publisher encrypt( String text )
 
 }

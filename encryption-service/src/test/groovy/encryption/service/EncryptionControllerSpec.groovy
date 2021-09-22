@@ -2,9 +2,9 @@ package encryption.service
 
 import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
+import jakarta.inject.Inject
+import reactor.core.publisher.Mono
 import spock.lang.Specification
-
-import javax.inject.Inject
 
 @MicronautTest
 class EncryptionControllerSpec extends Specification {
@@ -21,7 +21,7 @@ class EncryptionControllerSpec extends Specification {
             encryptionClient
 
         when:
-            def response = encryptionClient.encrypt( "foo" ).blockingGet().text
+            def response = Mono.from(encryptionClient.encrypt("foo" ) ).block().text
 
         then:
             response == "Zm9v -> ${server.port}"

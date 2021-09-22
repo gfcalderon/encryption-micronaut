@@ -1,8 +1,9 @@
 package gateway
 
+import io.micronaut.core.async.annotation.SingleResult
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.reactivex.Single
+import org.reactivestreams.Publisher
 
 @Controller( "/api/v1" )
 class GatewayController implements EncryptionOperations {
@@ -14,7 +15,8 @@ class GatewayController implements EncryptionOperations {
     }
 
     @Get( "/encrypt/{text}" )
-    Single encrypt( String text ) {
+    @SingleResult
+    Publisher encrypt( String text ) {
         return gatewayClient.encrypt( text )
     }
 }

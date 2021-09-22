@@ -1,8 +1,9 @@
 package encryption.service
 
+import io.micronaut.core.async.annotation.SingleResult
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.reactivex.Single
+import org.reactivestreams.Publisher
 
 @Controller( "/" )
 class EncryptionController {
@@ -14,7 +15,8 @@ class EncryptionController {
     }
 
     @Get( "/encrypt/{text}" )
-    Single encrypt( String text ) {
+    @SingleResult
+    Publisher encrypt( String text ) {
         return encryptionService.encrypt( text )
     }
 
